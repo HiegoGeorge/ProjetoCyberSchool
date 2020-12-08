@@ -80,13 +80,13 @@ public class CadastroAlunosAll extends javax.swing.JFrame {
         jLabelEnderecoesc = new javax.swing.JLabel();
         jLabelCnpjesc = new javax.swing.JLabel();
         CampoEnderecoesc = new javax.swing.JTextField();
-        CampoCnpjesc = new javax.swing.JTextField();
         CampoNomeUnv = new javax.swing.JTextField();
         jLabelEnderecoUnv = new javax.swing.JLabel();
         jLabelNomeUniversidade = new javax.swing.JLabel();
         jLabelCnpjUnv = new javax.swing.JLabel();
         CampoEnderecoUnv = new javax.swing.JTextField();
-        CampoCnpjUnv = new javax.swing.JTextField();
+        CampoCnpjesc = new javax.swing.JFormattedTextField();
+        CampoCnpjUnv = new javax.swing.JFormattedTextField();
         BTNvoltar = new javax.swing.JButton();
         cadastpascientes = new javax.swing.JLabel();
         JcadastroEscola = new javax.swing.JLabel();
@@ -261,6 +261,12 @@ public class CadastroAlunosAll extends javax.swing.JFrame {
         jLabelNomeEscola.setText("Nome da Escola :");
         getContentPane().add(jLabelNomeEscola);
         jLabelNomeEscola.setBounds(40, 300, 160, 30);
+
+        CampoCursoUnv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoCursoUnvActionPerformed(evt);
+            }
+        });
         getContentPane().add(CampoCursoUnv);
         CampoCursoUnv.setBounds(190, 520, 340, 30);
 
@@ -302,8 +308,6 @@ public class CadastroAlunosAll extends javax.swing.JFrame {
         });
         getContentPane().add(CampoEnderecoesc);
         CampoEnderecoesc.setBounds(189, 340, 340, 30);
-        getContentPane().add(CampoCnpjesc);
-        CampoCnpjesc.setBounds(190, 380, 150, 30);
         getContentPane().add(CampoNomeUnv);
         CampoNomeUnv.setBounds(190, 480, 340, 30);
 
@@ -329,8 +333,32 @@ public class CadastroAlunosAll extends javax.swing.JFrame {
         });
         getContentPane().add(CampoEnderecoUnv);
         CampoEnderecoUnv.setBounds(190, 560, 340, 30);
+
+        try {
+            CampoCnpjesc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        CampoCnpjesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoCnpjescActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoCnpjesc);
+        CampoCnpjesc.setBounds(190, 380, 150, 30);
+
+        try {
+            CampoCnpjUnv.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        CampoCnpjUnv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoCnpjUnvActionPerformed(evt);
+            }
+        });
         getContentPane().add(CampoCnpjUnv);
-        CampoCnpjUnv.setBounds(620, 480, 150, 30);
+        CampoCnpjUnv.setBounds(610, 480, 150, 30);
 
         BTNvoltar.setText("Voltar");
         BTNvoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -661,6 +689,18 @@ public class CadastroAlunosAll extends javax.swing.JFrame {
     private void CampoEnderecoescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEnderecoescActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoEnderecoescActionPerformed
+
+    private void CampoCursoUnvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCursoUnvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoCursoUnvActionPerformed
+
+    private void CampoCnpjescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCnpjescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoCnpjescActionPerformed
+
+    private void CampoCnpjUnvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCnpjUnvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoCnpjUnvActionPerformed
         // TODO add your handling code here:
 
     /**
@@ -720,8 +760,8 @@ public class CadastroAlunosAll extends javax.swing.JFrame {
     private javax.swing.JButton BtnExcluir;
     private javax.swing.JButton BtnNovo;
     private javax.swing.JButton BtnSalvar1;
-    private javax.swing.JTextField CampoCnpjUnv;
-    private javax.swing.JTextField CampoCnpjesc;
+    private javax.swing.JFormattedTextField CampoCnpjUnv;
+    private javax.swing.JFormattedTextField CampoCnpjesc;
     private javax.swing.JTextField CampoCursoUnv;
     private javax.swing.JTextField CampoEnderecoUnv;
     private javax.swing.JTextField CampoEnderecoesc;

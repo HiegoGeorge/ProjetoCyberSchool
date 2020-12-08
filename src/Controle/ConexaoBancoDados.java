@@ -19,7 +19,7 @@ public class ConexaoBancoDados {
     
    public Statement stm;  // realiza pesquisa no BD
    public ResultSet rs;  // Armazena o resultado da pesquisa
-   private String driver = "org.postgresql.Driver"; // Identifica o serviço de BD / padao do postgre
+   private String driver = "org.postgresql.Driver"; // Identifica o serviço de BD / padrao do postgre
    private String caminho = "jdbc:postgresql://localhost:5432/postgres" ; // qual caminho do BD onde esta alocado
    private String usuario = "postgres"; // Usuario padrao
    private String senha = "dev12";   // Senha do BD
@@ -40,7 +40,7 @@ public class ConexaoBancoDados {
    
    /////////// metodo para utilizar o botao pesquisa//////////////
    public ResultSet ExecutaPesquisa(String sql){
-       // TYPE_SCROLL_INSENSITIVE DIFERENCIA PESQUISA DE MAIUCULO PARA
+       // TYPE_SCROLL_INSENSITIVE DIFERENCIA PESQUISA DE MAIUSCULO PARA
 //CONCUR_READ_ONLY faz com que a lista do primeiro registo ate o ultimo do banco 
        try {
            stm = conex.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
@@ -67,4 +67,20 @@ public class ConexaoBancoDados {
    }
  
    // lembra de com bodao direito do mouse clicar em biblioteca e adicionar "DRIVER JDBC DO POSTGRESQL"
+   
+   
+   
+       public void executaSQL(String sql){
+        try {
+             stm = conex.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+             rs = stm.executeQuery(sql);
+        } catch (SQLException ex) {
+            //JOptionPane.showMessageDialog(null, "Erro NO EXECUTAsql() \n Erro: " +ex.getMessage());
+           
+        }
+    }
+
+   
+   
+   
 }

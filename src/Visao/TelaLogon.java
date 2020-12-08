@@ -106,6 +106,7 @@ public class TelaLogon extends javax.swing.JFrame {
        if(ctrl.CheckLogin(camponome.getText(), camposenha.getText())){
            
        new SegundoPlano().setVisible(true);
+       dispose();
        }else{
            JOptionPane.showMessageDialog(null, "Usuário ou senha Inconrreto");
        }

@@ -47,9 +47,9 @@ public class CadastroEscola extends javax.swing.JFrame {
         pesqEnf = new javax.swing.JLabel();
         jTextFieldpesquisa = new javax.swing.JTextField();
         CampoEndereco = new javax.swing.JTextField();
-        campoCNPJ = new javax.swing.JTextField();
         BTNEcluir = new javax.swing.JButton();
         BtnEditar = new javax.swing.JButton();
+        campoCNPJ = new javax.swing.JFormattedTextField();
         CampCodigo = new javax.swing.JTextField();
         LBLCOdigo = new javax.swing.JLabel();
         QuadroLBL = new javax.swing.JLabel();
@@ -133,8 +133,6 @@ public class CadastroEscola extends javax.swing.JFrame {
         });
         getContentPane().add(CampoEndereco);
         CampoEndereco.setBounds(120, 230, 270, 30);
-        getContentPane().add(campoCNPJ);
-        campoCNPJ.setBounds(120, 290, 270, 30);
 
         BTNEcluir.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         BTNEcluir.setText("Excluir");
@@ -158,6 +156,19 @@ public class CadastroEscola extends javax.swing.JFrame {
         });
         getContentPane().add(BtnEditar);
         BtnEditar.setBounds(640, 190, 80, 30);
+
+        try {
+            campoCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        campoCNPJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoCNPJActionPerformed(evt);
+            }
+        });
+        getContentPane().add(campoCNPJ);
+        campoCNPJ.setBounds(120, 290, 130, 30);
 
         CampCodigo.setEnabled(false);
         CampCodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -341,6 +352,10 @@ public class CadastroEscola extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
 
+    private void campoCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCNPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoCNPJActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,7 +406,7 @@ public class CadastroEscola extends javax.swing.JFrame {
     private javax.swing.JLabel LBLCOdigo;
     private javax.swing.JLabel NomeFormEmf;
     private javax.swing.JLabel QuadroLBL;
-    private javax.swing.JTextField campoCNPJ;
+    private javax.swing.JFormattedTextField campoCNPJ;
     private javax.swing.JTextField campoNome;
     private javax.swing.JLabel fundCadEmf;
     private javax.swing.JButton jButton1;

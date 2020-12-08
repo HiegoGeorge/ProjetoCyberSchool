@@ -5,17 +5,25 @@
  */
 package Visao;
 
-/**
- *
- * @author Hiego
- */
+import Controle.Escolas;
+import Controle.Universidade;
+import Modelo.ModEscolas;
+import Modelo.ModUniversidades;
+
+
+import javax.swing.JOptionPane;
+
+
 public class CadastroUniversidades extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroUniversidades
-     */
+  //  ConexaoBancoDados conect = new ConexaoBancoDados();
+    ModUniversidades modesc = new ModUniversidades();
+     Universidade control = new Universidade();
+    int flag=0;
+    
     public CadastroUniversidades() {
         initComponents();
+        
     }
 
     /**
@@ -27,22 +35,357 @@ public class CadastroUniversidades extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fundCadEmf = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        NomeFormEmf = new javax.swing.JLabel();
+        campoNome = new javax.swing.JTextField();
+        jlabelEndereco = new javax.swing.JLabel();
+        JlabelCnpj = new javax.swing.JLabel();
+        BtnSalvarCadEmf = new javax.swing.JButton();
+        BTNpesquisaEnfermeiro = new javax.swing.JButton();
+        pesqEnf = new javax.swing.JLabel();
+        jTextFieldpesquisa = new javax.swing.JTextField();
+        CampoEndereco = new javax.swing.JTextField();
+        BTNEcluir = new javax.swing.JButton();
+        BtnEditar = new javax.swing.JButton();
+        CampCodigo = new javax.swing.JTextField();
+        LBLCOdigo = new javax.swing.JLabel();
+        jLabelNomeCurso = new javax.swing.JLabel();
+        BTNnovo = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        CampoCursoUnv = new javax.swing.JTextField();
+        campoCNPJ = new javax.swing.JFormattedTextField();
+        QuadroLBL = new javax.swing.JLabel();
+
+        fundCadEmf.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel2.setText("Cadastro de Universidades");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(240, 0, 210, 33);
 
-        pack();
+        NomeFormEmf.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        NomeFormEmf.setText("Nome :");
+        getContentPane().add(NomeFormEmf);
+        NomeFormEmf.setBounds(20, 150, 60, 20);
+
+        campoNome.setEnabled(false);
+        campoNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(campoNome);
+        campoNome.setBounds(130, 140, 300, 30);
+
+        jlabelEndereco.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlabelEndereco.setText("Endereco :");
+        getContentPane().add(jlabelEndereco);
+        jlabelEndereco.setBounds(20, 260, 70, 30);
+
+        JlabelCnpj.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        JlabelCnpj.setText("CNPJ :");
+        getContentPane().add(JlabelCnpj);
+        JlabelCnpj.setBounds(20, 310, 60, 30);
+
+        BtnSalvarCadEmf.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        BtnSalvarCadEmf.setText("Salvar");
+        BtnSalvarCadEmf.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnSalvarCadEmf.setEnabled(false);
+        BtnSalvarCadEmf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalvarCadEmfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnSalvarCadEmf);
+        BtnSalvarCadEmf.setBounds(640, 130, 80, 30);
+
+        BTNpesquisaEnfermeiro.setText("Pesquisar");
+        BTNpesquisaEnfermeiro.setEnabled(false);
+        BTNpesquisaEnfermeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNpesquisaEnfermeiroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BTNpesquisaEnfermeiro);
+        BTNpesquisaEnfermeiro.setBounds(300, 80, 90, 23);
+
+        pesqEnf.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pesqEnf.setText("Pesquisar Escolas");
+        getContentPane().add(pesqEnf);
+        pesqEnf.setBounds(46, 44, 150, 30);
+
+        jTextFieldpesquisa.setEnabled(false);
+        jTextFieldpesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldpesquisaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldpesquisa);
+        jTextFieldpesquisa.setBounds(210, 40, 260, 30);
+
+        CampoEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoEnderecoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoEndereco);
+        CampoEndereco.setBounds(130, 260, 270, 30);
+
+        BTNEcluir.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        BTNEcluir.setText("Excluir");
+        BTNEcluir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BTNEcluir.setEnabled(false);
+        BTNEcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNEcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BTNEcluir);
+        BTNEcluir.setBounds(640, 250, 80, 30);
+
+        BtnEditar.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        BtnEditar.setText("Editar");
+        BtnEditar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnEditar);
+        BtnEditar.setBounds(640, 190, 80, 30);
+
+        CampCodigo.setEnabled(false);
+        CampCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampCodigoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampCodigo);
+        CampCodigo.setBounds(50, 370, 50, 30);
+
+        LBLCOdigo.setText("Codigo :");
+        getContentPane().add(LBLCOdigo);
+        LBLCOdigo.setBounds(10, 370, 50, 30);
+
+        jLabelNomeCurso.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelNomeCurso.setText("Nome do Curso :");
+        getContentPane().add(jLabelNomeCurso);
+        jLabelNomeCurso.setBounds(20, 204, 110, 30);
+
+        BTNnovo.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        BTNnovo.setText("Novo");
+        BTNnovo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BTNnovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNnovoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BTNnovo);
+        BTNnovo.setBounds(640, 80, 80, 30);
+
+        jButton1.setText("Voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(640, 370, 61, 23);
+
+        CampoCursoUnv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoCursoUnvActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoCursoUnv);
+        CampoCursoUnv.setBounds(130, 200, 270, 30);
+
+        try {
+            campoCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        campoCNPJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoCNPJActionPerformed(evt);
+            }
+        });
+        getContentPane().add(campoCNPJ);
+        campoCNPJ.setBounds(130, 310, 110, 30);
+
+        QuadroLBL.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(QuadroLBL);
+        QuadroLBL.setBounds(4, 34, 630, 370);
+
+        setSize(new java.awt.Dimension(737, 453));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BtnSalvarCadEmfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarCadEmfActionPerformed
+       
+      if(flag==1){         
+           
+      // seta os valores
+        modesc.setNomeunv(campoNome.getText());
+        modesc.setEnderecounv(CampoEndereco.getText());
+        modesc.setCnpjunv(campoCNPJ.getText());
+        modesc.setCursounv(CampoCursoUnv.getText());
+        
+        control.Salvar(modesc);
+        
+       //// depois que salvar ele limpa os campos para cadastrar de novo////////////
+         // pronto para gravar
+        campoNome.setText(" ");
+        CampoEndereco.setText(" ");
+        campoCNPJ.setText(" ");
+        CampoCursoUnv.setText(" ");
+        
+        campoNome.setText(null);          campoNome.setEnabled(false);
+        CampoEndereco.setText(null);      CampoEndereco.setEnabled(false);
+        campoCNPJ.setText(null);          campoCNPJ.setEnabled(false);
+        CampoCursoUnv.setText(null);      CampoCursoUnv.setEnabled(false);
+        
+    } else{
+            modesc.setCodigounv(Integer.parseInt(CampCodigo.getText()));
+            modesc.setNomeunv(campoNome.getText());
+            modesc.setEnderecounv(CampoEndereco.getText());
+            modesc.setCnpjunv(campoCNPJ.getText());
+            
+            control.Editar(modesc); 
+            
+            
+                   // LIBERA NOVAMENTE A PESQUISA
+       
+
+                   
+        BTNnovo.setEnabled(true);
+        jTextFieldpesquisa.setEnabled(true);
+        BTNpesquisaEnfermeiro.setEnabled(true);
+
+        }
+           
+        
+        
+    }//GEN-LAST:event_BtnSalvarCadEmfActionPerformed
+
+    private void BTNpesquisaEnfermeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNpesquisaEnfermeiroActionPerformed
+        
+  
+       modesc.setPesquisa(jTextFieldpesquisa.getText());
+       ModUniversidades pega = control.BuscaEnf(modesc);
+        
+        
+        campoNome.setText(pega.getNomeunv());
+        CampoEndereco.setText(pega.getEnderecounv());
+        campoCNPJ.setText(pega.getCnpjunv());
+        CampCodigo.setText(String.valueOf(pega.getCodigounv()));
+        
+      
+        
+    }//GEN-LAST:event_BTNpesquisaEnfermeiroActionPerformed
+
+    private void jTextFieldpesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldpesquisaActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_jTextFieldpesquisaActionPerformed
+
+    private void BtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarActionPerformed
+       
+     flag = 2;
+       //////////libera os botoes/////////
+        
+        BTNpesquisaEnfermeiro.setEnabled(true);  jTextFieldpesquisa.setEnabled(true);
+        BTNEcluir.setEnabled(true);
+        BtnSalvarCadEmf.setEnabled(true);
+        
+        //////////LIbera os campos//////////////
+        campoNome.setEnabled(true);
+        CampoEndereco.setEnabled(true);
+        campoCNPJ.setEnabled(true);
+         CampoCursoUnv.setEnabled(true);
+         /*/////////Bloqueia os campos//////////
+        campoNome.setText(null);                  campoNome.setEnabled(false);
+        CampoEndereco.setText(null);              CampoEndereco.setEnabled(false);
+        campoCNPJ.setText(null);                  campoCNPJ.setEnabled(false);
+         CampoCursoUnv.setText(null);      CampoCursoUnv.setEnabled(false);
+        
+        *//////////Bloqueia os campos//////////
+        BTNnovo.setEnabled(false);
+        
+    }//GEN-LAST:event_BtnEditarActionPerformed
+
+    private void BTNEcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNEcluirActionPerformed
+        
+        int resposta = 0;
+        resposta = JOptionPane.showConfirmDialog(rootPane,"Deseja Realmente Excluir ?");
+        if(resposta == JOptionPane.YES_OPTION){
+            modesc.setCodigounv(Integer.parseInt(CampCodigo.getText()));
+            
+            control.Excluir(modesc);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_BTNEcluirActionPerformed
+
+    private void BTNnovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNnovoActionPerformed
+        
+        flag = 1;
+        
+        ///////Libera os campos////////
+            campoNome.setEnabled(true);
+            CampoEndereco.setEnabled(true);
+            campoCNPJ.setEnabled(true);
+             CampoCursoUnv.setEnabled(true);
+           
+            BtnSalvarCadEmf.setEnabled(true);
+            
+           ////////// Bloqueia campos///////
+           BtnEditar.setEnabled(false);
+           
+        
+
+        
+    }//GEN-LAST:event_BTNnovoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        SegundoPlano recebe = new SegundoPlano();
+        recebe.setVisible(true);
+        dispose();
+
+
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CampCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampCodigoActionPerformed
+
+    private void CampoEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoEnderecoActionPerformed
+
+    private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNomeActionPerformed
+
+    private void CampoCursoUnvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoCursoUnvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoCursoUnvActionPerformed
+
+    private void campoCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCNPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoCNPJActionPerformed
+    
+
+    
     /**
      * @param args the command line arguments
      */
@@ -69,6 +412,21 @@ public class CadastroUniversidades extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CadastroUniversidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +437,26 @@ public class CadastroUniversidades extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BTNEcluir;
+    private javax.swing.JButton BTNnovo;
+    private javax.swing.JButton BTNpesquisaEnfermeiro;
+    private javax.swing.JButton BtnEditar;
+    private javax.swing.JButton BtnSalvarCadEmf;
+    private javax.swing.JTextField CampCodigo;
+    private javax.swing.JTextField CampoCursoUnv;
+    private javax.swing.JTextField CampoEndereco;
+    private javax.swing.JLabel JlabelCnpj;
+    private javax.swing.JLabel LBLCOdigo;
+    private javax.swing.JLabel NomeFormEmf;
+    private javax.swing.JLabel QuadroLBL;
+    private javax.swing.JFormattedTextField campoCNPJ;
+    private javax.swing.JTextField campoNome;
+    private javax.swing.JLabel fundCadEmf;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelNomeCurso;
+    private javax.swing.JTextField jTextFieldpesquisa;
+    private javax.swing.JLabel jlabelEndereco;
+    private javax.swing.JLabel pesqEnf;
     // End of variables declaration//GEN-END:variables
 }

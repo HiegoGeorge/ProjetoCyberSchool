@@ -55,7 +55,7 @@ public class Universidade {
     /// faz a busca no banco pelo nome do enfermeiro 
     public ModUniversidades BuscaEnf(ModUniversidades md1){
         conecta.Conexao();
-        String sql = "select * from universidades where nome ilike '%"+md1.getPesquisa()+"%'";
+        String sql = "select * from universidades where nomeunv ilike '%"+md1.getPesquisa()+"%'";
         //String sql = "select * from funcionario";
         
         ResultSet rs = conecta.ExecutaPesquisa(sql);

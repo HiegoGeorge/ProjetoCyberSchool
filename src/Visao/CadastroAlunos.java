@@ -56,20 +56,16 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campoSexo = new javax.swing.JTextField();
         BtnNovo = new javax.swing.JButton();
         BtnSalvar1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         pesquisar = new javax.swing.JLabel();
         BtnEditar = new javax.swing.JButton();
         BtnExcluir = new javax.swing.JButton();
         BTNPesquisar = new javax.swing.JButton();
         jLabelID = new javax.swing.JLabel();
         campoID = new javax.swing.JTextField();
-        jLabelNomeEscola = new javax.swing.JLabel();
-        CampoCurso = new javax.swing.JTextField();
-        jLabelNomeCurso = new javax.swing.JLabel();
         campopesquisar = new javax.swing.JTextField();
-        CampoNomeEscola = new javax.swing.JTextField();
         cadastpascientes = new javax.swing.JLabel();
         BTNvoltar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -172,7 +168,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnNovo);
-        BtnNovo.setBounds(40, 410, 70, 30);
+        BtnNovo.setBounds(40, 300, 70, 30);
 
         BtnSalvar1.setText("Salvar");
         BtnSalvar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -183,11 +179,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnSalvar1);
-        BtnSalvar1.setBounds(430, 410, 70, 30);
-
-        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 390, 760, 60);
+        BtnSalvar1.setBounds(430, 300, 70, 30);
 
         pesquisar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         pesquisar.setText("Pesquisar Alunos :");
@@ -203,7 +195,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnEditar);
-        BtnEditar.setBounds(230, 410, 70, 30);
+        BtnEditar.setBounds(240, 300, 70, 30);
 
         BtnExcluir.setText("Excluir");
         BtnExcluir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -214,7 +206,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnExcluir);
-        BtnExcluir.setBounds(670, 410, 70, 30);
+        BtnExcluir.setBounds(660, 300, 70, 30);
 
         BTNPesquisar.setText("Pesquisar");
         BTNPesquisar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -240,18 +232,6 @@ public class CadastroAlunos extends javax.swing.JFrame {
         getContentPane().add(campoID);
         campoID.setBounds(60, 95, 55, 30);
 
-        jLabelNomeEscola.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabelNomeEscola.setText("Nome da Escola :");
-        getContentPane().add(jLabelNomeEscola);
-        jLabelNomeEscola.setBounds(40, 310, 160, 30);
-        getContentPane().add(CampoCurso);
-        CampoCurso.setBounds(170, 350, 340, 30);
-
-        jLabelNomeCurso.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelNomeCurso.setText("Nome do Curso :");
-        getContentPane().add(jLabelNomeCurso);
-        jLabelNomeCurso.setBounds(40, 350, 110, 30);
-
         campopesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campopesquisarActionPerformed(evt);
@@ -260,18 +240,10 @@ public class CadastroAlunos extends javax.swing.JFrame {
         getContentPane().add(campopesquisar);
         campopesquisar.setBounds(340, 30, 240, 30);
 
-        CampoNomeEscola.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoNomeEscolaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CampoNomeEscola);
-        CampoNomeEscola.setBounds(170, 310, 340, 30);
-
         cadastpascientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cadastpascientes.setEnabled(false);
         getContentPane().add(cadastpascientes);
-        cadastpascientes.setBounds(20, 20, 760, 430);
+        cadastpascientes.setBounds(20, 20, 760, 320);
 
         BTNvoltar.setText("Voltar");
         BTNvoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -280,9 +252,13 @@ public class CadastroAlunos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BTNvoltar);
-        BTNvoltar.setBounds(360, 460, 60, 23);
+        BTNvoltar.setBounds(370, 360, 60, 23);
 
-        setSize(new java.awt.Dimension(819, 522));
+        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 270, 760, 70);
+
+        setSize(new java.awt.Dimension(819, 426));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -302,7 +278,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campopesquisar.setEnabled(true);
         BTNPesquisar.setEnabled(true);
         BtnNovo.setEnabled(true);
-        BtnEditar.setEnabled(false);
+        BtnEditar.setEnabled(true);
         
     //////////////////////////////////////////////////////////////        
     ///   Aluno  PEGA OS DADOS DIGITADOS PARA SALVA            ///
@@ -313,8 +289,8 @@ public class CadastroAlunos extends javax.swing.JFrame {
        modaluno.setSexo(campoSexo.getText());
        modaluno.setEndereco(campEnde.getText());
        modaluno.setNascimento(campoDatNas.getText());
-       modaluno.setEscola(CampoNomeEscola.getText());
-       modaluno.setCurso(CampoCurso.getText());
+     //  modaluno.setEscola(CampoNomeEscola.getText());
+     //  modaluno.setCurso(CampoCurso.getText());
        controlAluno.Salvar(modaluno);
        
     // APÓS SALVAR A TELA
@@ -325,8 +301,8 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campoSexo.setText(null);          campoSexo.setEnabled(false);
         campEnde.setText(null);           campEnde.setEnabled(false);
         campoDatNas.setText(null);        campoDatNas.setEnabled(false);
-       CampoNomeEscola.setText(null);    CampoNomeEscola.setEnabled(false);
-       CampoCurso.setText(null);         CampoCurso.setEnabled(false);
+      // CampoNomeEscola.setText(null);    CampoNomeEscola.setEnabled(false);
+      // CampoCurso.setText(null);         CampoCurso.setEnabled(false);
 
 
     //////////////////////////////////////////////////////////////////////   
@@ -346,14 +322,14 @@ public class CadastroAlunos extends javax.swing.JFrame {
        modaluno.setSexo(campoSexo.getText());
        modaluno.setEndereco(campEnde.getText());
        modaluno.setNascimento(campoDatNas.getText());
-       modaluno.setEscola(CampoNomeEscola.getText());
-       modaluno.setCurso(CampoCurso.getText());
+      // modaluno.setEscola(CampoNomeEscola.getText());
+       //modaluno.setCurso(CampoCurso.getText());
        controlAluno.Editar(modaluno); // envia pro banco os elementos editados
      
     
        
        // LIMPA E TRAVA OS CAMPOS DE INSERIR DADOS
-        BtnSalvar1.setEnabled(false);
+        BtnSalvar1.setEnabled(true);
         campoID.setText(null);        campoID.setEnabled(false);
         camponome.setText(null);      camponome.setEnabled(false);
         jLabelID.setText(null);       jLabelID.setEnabled(false);
@@ -362,7 +338,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campoNomPai.setText(null);    campoNomPai.setEnabled(false);
         campoNomMae.setText(null);    campoNomMae.setEnabled(false);
         campEnde.setText(null);       campEnde.setEnabled(false);
-        CampoNomeEscola.setText(null);                CampoNomeEscola.setEnabled(false);
+    //    CampoNomeEscola.setText(null);                CampoNomeEscola.setEnabled(false);
        
        // LIBERA NOVAMENTE A PESQUISA
         BTNPesquisar.setEnabled(true);
@@ -412,8 +388,8 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campoSexo.setText(modell.getSexo());
         campoDatNas.setText(modell.getNascimento());
         campEnde.setText(modell.getEndereco());
-        CampoNomeEscola.setText(modell.getEscola());
-        CampoCurso.setText(modell.getCurso());
+     //   CampoNomeEscola.setText(modell.getEscola());
+    //    CampoCurso.setText(modell.getCurso());
    
         
     
@@ -433,7 +409,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campoNomPai.setText(null);
         campoNomMae.setText(null); 
         campEnde.setText(null);
-        CampoNomeEscola.setText(null);
+      //  CampoNomeEscola.setText(null);
 
 
         
@@ -444,13 +420,14 @@ public class CadastroAlunos extends javax.swing.JFrame {
         BTNPesquisar.setEnabled(false);
         BtnEditar.setEnabled(false);
         BtnExcluir.setEnabled(false);
+        
         camponome.setEnabled(true);
         campoSexo.setEnabled(true);
         campoDatNas.setEnabled(true);
         campoNomPai.setEnabled(true);
         campoNomMae.setEnabled(true);
         campEnde.setEnabled(true);
-        CampoNomeEscola.setEnabled(true);
+        //CampoNomeEscola.setEnabled(true);
 
     }//GEN-LAST:event_BtnNovoActionPerformed
 
@@ -458,11 +435,11 @@ public class CadastroAlunos extends javax.swing.JFrame {
       
         flag=2 ;
 //////////bloqueia os campos/////////
-        BTNPesquisar.setEnabled(false);
-        BtnExcluir.setEnabled(false);
+        BTNPesquisar.setEnabled(true);
+        BtnExcluir.setEnabled(true);
         BtnNovo.setEnabled(false);
-        campopesquisar.setEnabled(false);
-        BTNPesquisar.setEnabled(false);
+        campopesquisar.setEnabled(true);
+        BTNPesquisar.setEnabled(true);
         
         
         ///////libera os campos///////////
@@ -473,8 +450,8 @@ public class CadastroAlunos extends javax.swing.JFrame {
         campoNomPai.setEnabled(true);
         campoNomMae.setEnabled(true);
         campEnde.setEnabled(true);
-        CampoNomeEscola.setEnabled(true);
-        CampoCurso.setEnabled(true);
+   //     CampoNomeEscola.setEnabled(true);
+     //   CampoCurso.setEnabled(true);
 
 
            
@@ -489,12 +466,7 @@ public class CadastroAlunos extends javax.swing.JFrame {
         SegundoPlano recebe = new SegundoPlano();
         recebe.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_BTNvoltarActionPerformed
-
-    private void CampoNomeEscolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeEscolaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoNomeEscolaActionPerformed
 
     private void campEndeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campEndeActionPerformed
         // TODO add your handling code here:
@@ -554,8 +526,6 @@ public class CadastroAlunos extends javax.swing.JFrame {
     private javax.swing.JButton BtnExcluir;
     private javax.swing.JButton BtnNovo;
     private javax.swing.JButton BtnSalvar1;
-    private javax.swing.JTextField CampoCurso;
-    private javax.swing.JTextField CampoNomeEscola;
     private javax.swing.JLabel LabSexo;
     private javax.swing.JLabel LablDaTaNAS;
     private javax.swing.JLabel LablEnde;
@@ -573,8 +543,6 @@ public class CadastroAlunos extends javax.swing.JFrame {
     private javax.swing.JTextField campopesquisar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelID;
-    private javax.swing.JLabel jLabelNomeCurso;
-    private javax.swing.JLabel jLabelNomeEscola;
     private javax.swing.JLabel pesquisar;
     private javax.swing.JLabel rodapeTOPO;
     // End of variables declaration//GEN-END:variables

@@ -27,14 +27,21 @@ public class SegundoPlano extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         fudotelaPesq = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         MenuCadastro = new javax.swing.JMenu();
         menuCadAluno = new javax.swing.JMenuItem();
-        menuCadUsuarios = new javax.swing.JMenuItem();
         menuCadEscola = new javax.swing.JMenuItem();
         menuCadUniversidades = new javax.swing.JMenuItem();
+        menuVerificar = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItemEditarAluno = new javax.swing.JMenuItem();
+        jMenuItemEditarUsuario = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -54,14 +61,6 @@ public class SegundoPlano extends javax.swing.JFrame {
         });
         MenuCadastro.add(menuCadAluno);
 
-        menuCadUsuarios.setText("Cadastro de Usuarios");
-        menuCadUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuCadUsuariosActionPerformed(evt);
-            }
-        });
-        MenuCadastro.add(menuCadUsuarios);
-
         menuCadEscola.setText("Cadastro Escola");
         menuCadEscola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,11 +70,57 @@ public class SegundoPlano extends javax.swing.JFrame {
         MenuCadastro.add(menuCadEscola);
 
         menuCadUniversidades.setText("Cadastro Universidade");
+        menuCadUniversidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadUniversidadesActionPerformed(evt);
+            }
+        });
         MenuCadastro.add(menuCadUniversidades);
+
+        menuVerificar.setText("Relatorio");
+        menuVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuVerificarActionPerformed(evt);
+            }
+        });
+        MenuCadastro.add(menuVerificar);
 
         jMenuBar2.add(MenuCadastro);
 
-        jMenu4.setText("Edit");
+        jMenu4.setText("Editar");
+
+        jMenuItemEditarAluno.setText("Editar Aluno");
+        jMenuItemEditarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEditarAlunoActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItemEditarAluno);
+
+        jMenuItemEditarUsuario.setText("Editar Usuário");
+        jMenuItemEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEditarUsuarioActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItemEditarUsuario);
+
+        jMenuItem2.setText("Editar Escola");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem2);
+
+        jMenuItem3.setText("Editar Universidade");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem3);
+
         jMenuBar2.add(jMenu4);
 
         setJMenuBar(jMenuBar2);
@@ -87,27 +132,65 @@ public class SegundoPlano extends javax.swing.JFrame {
     private void menuCadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadAlunoActionPerformed
         CadastroAlunosAll cadaln = new CadastroAlunosAll();
         cadaln.setVisible(true);
-        
+        dispose();
         
         
     }//GEN-LAST:event_menuCadAlunoActionPerformed
-
-    private void menuCadUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadUsuariosActionPerformed
-        
-        CadastroUsuario cadusario = new CadastroUsuario();
-        cadusario.setVisible(true);
-
-                
-    }//GEN-LAST:event_menuCadUsuariosActionPerformed
 
     private void menuCadEscolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadEscolaActionPerformed
        
         CadastroEscola cadescola = new CadastroEscola();
         cadescola.setVisible(true);
-
+        dispose();
 
 
     }//GEN-LAST:event_menuCadEscolaActionPerformed
+
+    private void menuVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuVerificarActionPerformed
+       
+        Relatorio verif = new Relatorio();
+        verif.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_menuVerificarActionPerformed
+
+    private void jMenuItemEditarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditarAlunoActionPerformed
+        CadastroAlunos teste = new CadastroAlunos();
+        teste.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemEditarAlunoActionPerformed
+
+    private void menuCadUniversidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadUniversidadesActionPerformed
+        CadastroUniversidades cad = new CadastroUniversidades();
+        cad.setVisible(true);
+        dispose();
+        
+        
+        
+    }//GEN-LAST:event_menuCadUniversidadesActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+         CadastroUniversidades cad = new CadastroUniversidades();
+        cad.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItemEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditarUsuarioActionPerformed
+
+        CadastroUsuario cadusario = new CadastroUsuario();
+        cadusario.setVisible(true);
+        dispose();
+                
+        
+        
+    }//GEN-LAST:event_jMenuItemEditarUsuarioActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        CadastroEscola cad = new CadastroEscola();
+        cad.setVisible(true);
+        dispose();    
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,9 +233,14 @@ public class SegundoPlano extends javax.swing.JFrame {
     private javax.swing.JLabel fudotelaPesq;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItemEditarAluno;
+    private javax.swing.JMenuItem jMenuItemEditarUsuario;
     private javax.swing.JMenuItem menuCadAluno;
     private javax.swing.JMenuItem menuCadEscola;
     private javax.swing.JMenuItem menuCadUniversidades;
-    private javax.swing.JMenuItem menuCadUsuarios;
+    private javax.swing.JMenuItem menuVerificar;
     // End of variables declaration//GEN-END:variables
 }
